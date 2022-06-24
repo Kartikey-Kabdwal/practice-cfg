@@ -9,6 +9,205 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 
     <title>Document</title>
+    <style>
+        
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        
+      }
+      body{
+        background: linear-gradient(135deg, white, wheat);
+        background-attachment: fixed;
+      }
+      nav {
+        position: fixed;
+        background: black;
+        width: 100%;
+        height: 75px;
+        padding: 10px 0;
+        z-index: 20;
+      }
+      nav .menu {
+        max-width: 1250px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+      }
+      .menu .logo a {
+        text-decoration: none;
+        color: white;
+        font-size: 35px;
+        font-weight: 600;
+      }
+      .menu ul {
+        display: inline-flex;
+      }
+      .menu ul li {
+        list-style: none;
+        margin-left: 7px;
+      }
+      .menu ul li:first-child {
+        margin-left: 0px;
+      }
+      .menu ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 8px 15px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        border: 1px solid white;
+      }
+      .menu ul li a:hover {
+        background: grey;
+        color: white;
+      }
+      .img {
+        background: url("img3.jpg") no-repeat;
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+      .img::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: white;
+      }
+      .header {
+        margin-top:0px;
+        border: 2px solid bisque;
+        box-shadow: black 2px;
+       
+      }
+      .left {
+        position: absolute;
+        left: 34px;
+        top: 43px;
+        display: inline-block;
+      }
+
+      .right {
+        position: absolute;
+        right: 34px;
+        top: 43px;
+        display: inline-block;
+      }
+
+      .navbar li {
+        display: inline-block;
+        list-style: none;
+      }
+
+      
+      .grid1,.grid3{
+        display:grid;
+        grid-template-columns: 75% 1fr;
+        margin: 50px;
+        height:500px;
+        
+      }
+      .grid2, .grid4{
+        display:grid;
+        grid-template-columns: 25% 3fr;
+        margin-right: 20px;
+        margin-left:20px;
+        height:500px;
+      }
+      .grid5{
+        display: grid;
+        grid-template-columns: 33vw 33vw 33vw;
+        margin: 30px;
+      }
+      h3 , p{
+        font-size: 15px;
+        padding:20px;
+      }
+    
+      .para1{
+        font-size: 15px;
+        margin-top:150px;
+        padding:20px;
+      }
+      .para2{
+        font-size: 15px;
+        margin-left: 50px;
+        padding:20px;
+
+      }
+      .para4{
+        font-size: 15px;
+        margin-left: 200px;
+        padding:20px;
+      }
+      .image1 {
+       
+        max-width: 100%;
+        height: auto;
+        margin-top:50px;
+        padding:20px;
+        margin-bottom: 100px;
+        align-content: center;
+      }
+      .image2{
+        max-width: 100%;
+        height: auto;
+        
+        margin-left:50px;
+        padding:20px;
+        margin-bottom: 100px;
+        align-content: center;
+
+       
+      }
+      .p1{
+        
+        box-sizing: border-box;
+        height:200px; 
+        width:450px;
+        padding:20px;
+        justify-content: center;
+        align-items: center;
+        
+        border:2px solid lightblue;
+        border-radius: 15px;
+        box-shadow: 10px 10px 5px lightblue;
+      }
+    h3{
+      font-size: 20px;
+    }
+      
+
+      .btn {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  background:green;
+  margin-top:50px;
+  margin-left:150px;
+  text-decoration: none;
+  color:aliceblue
+}
+
+
+.btn:hover {
+    background: rgb(11, 168, 221);
+}
+      
+
+    </style>
    
 </head>
 <body>

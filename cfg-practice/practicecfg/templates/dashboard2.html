@@ -12,60 +12,52 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        *{
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
-}
-.bodyy{
-    display: grid;
-    grid-template-columns: 20% 80%;
-}
-nav{
-    
-    margin:10px;
-    border:2px solid black;
-    
-}
-.navbar{
-    height: 100vh;
-    background-color: black;
-    color:white;
-}
-.navbar li
-{
-    
-    list-style-type: none;
-    text-decoration: none;
-    padding:15px;
-   
-    
-    
-}
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .bodyy {
+        display: grid;
+        grid-template-columns: 20% 80%;
+      }
+      nav {
+        margin: 10px;
+        border: 2px solid black;
+      }
+      .navbar {
+        height: 100vh;
+        background-color: black;
+        color: white;
+      }
+      .navbar li {
+        list-style-type: none;
+        text-decoration: none;
+        padding: 15px;
+      }
 
-.navbar li:hover, .navbar li:active{
-    background-color: blue;
-    color:black;
-    border:2px solid black;
-}
-a{
-    color:white;
-    text-decoration: none;
-}
-.a:hover, .a:active{
-    background-color: grey;
-    color:black;
-   
-}
+      .navbar li:hover,
+      .navbar li:active {
+        background-color: blue;
+        color: black;
+        border: 2px solid black;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      .a:hover,
+      .a:active {
+        background-color: grey;
+        color: black;
+      }
 
-
-header{
-    background-color: grey;
-    color: black;
-    padding: 20px;
-    text-align: center;
-}
+      header {
+        background-color: grey;
+        color: black;
+        padding: 20px;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -78,7 +70,7 @@ header{
               <li><a href="#Home">Home</a></li>
             </div>
             <div class="li_items">
-              <li><a href="#About">About</a></li>
+              <li><a href="{% url 'student' %}">Student</a></li>
             </div>
             <div class="li_items">
               <li><a href="#Category">Category</a></li>
@@ -92,15 +84,14 @@ header{
             <div class="li_items">
               <li><a href="#"></a></li>
             </div>
-           
           </ul>
         </nav>
       </div>
       <div class="content">
         <header>
           <div class="header">
-            <h1> RATNA CHARITABLE TRUST</h1>
-        </div>
+            <h1>RATNA CHARITABLE TRUST</h1>
+          </div>
         </header>
       </div>
     </div>

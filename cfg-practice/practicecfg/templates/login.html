@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form validation in HTML & CSS</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0px;
+        padding: 0px;
+        background-image: linear-gradient(180deg, blue, black);
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100%;
+      }
+      h1{
+        font-family:'Times New Roman', Times, serif;
+        
+        text-align: center;
+        
+      }
+      
+      .container{
+        background-color: white;
+        width:45%;
+        padding:45px;
+        border:5px solid white;
+        border-radius: 5px;
+      }
+      
+      form input {
+        width: 100%;
+        height: 100%;
+        outline: none;
+        height: 50px;
+        margin-top: 30px;
+        padding: 5px;
+        background: none;
+        caret-color: #5372f0;
+        border-radius: 5px;
+        border: 1px solid #bfbfbf;
+        border-bottom-width: 2px;
+        
+      }
+     
+      
+      form input[type="submit"] {
+        height: 50px;
+        margin-top: 30px;
+        color: #fff;
+        padding: 0;
+        border: none;
+        background: #5372f0;
+        cursor: pointer;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+      form input[type="submit"]:hover {
+        background: #2c52ed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>
+            Login Form
+        </h1>
+    </header>
+      <form action="#">
+
+        <div class="field email">
+          <input type="text" placeholder="Email Address">
+        </div>
+
+        <div class="password">
+            <input type="password" placeholder="Password">
+        </div>
+        <div class="login_as">
+          
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+    <label class="form-check-label" for="flexCheckDefault">student</label>
+  </div>
+  
+  
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked/>
+    <label class="form-check-label" for="flexCheckChecked">teacher</label>
+  </div>
+        </div>
+
+        <div class="pass"><a href="#">Forgot password?</a></div>
+
+        <input type="submit" value="Login" />
+      </form>
+
+      <div class="signin">Not yet member? <a href="#">Signup now</a></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

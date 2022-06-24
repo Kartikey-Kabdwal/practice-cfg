@@ -2,112 +2,115 @@
 
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Form validation in HTML & CSS</title>
-
     <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      id="bootstrap-css"
     />
-    
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
       body {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0px;
-        padding: 0px;
-        background-image: linear-gradient(180deg, blue, black);
-        background-repeat: no-repeat;
-        height: 100vh;
-        width: 100%;
+        font-family: "Lato", sans-serif;
       }
-      h1{
-        font-family:'Times New Roman', Times, serif;
-        
-        text-align: center;
-        
+
+      .main-head {
+        height: 150px;
+        background: #fff;
       }
-      
-      .container{
-        background-color: white;
-        width:45%;
-        padding:45px;
-        border:5px solid white;
-        border-radius: 5px;
-      }
-      
-      form input {
-        width: 100%;
+
+      .sidenav {
         height: 100%;
-        outline: none;
-        height: 50px;
-        margin-top: 30px;
-        padding: 5px;
-        background: none;
-        caret-color: #5372f0;
-        border-radius: 5px;
-        border: 1px solid #bfbfbf;
-        border-bottom-width: 2px;
-        
+        background-color: #000;
+        overflow-x: hidden;
+        padding-top: 20px;
       }
-     
-      
-      form input[type="submit"] {
-        height: 50px;
-        margin-top: 30px;
+
+      .main {
+        padding: 0px 10px;
+      }
+
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+      }
+
+      @media screen and (max-width: 450px) {
+        .login-form {
+          margin-top: 10%;
+        }
+
+        .register-form {
+          margin-top: 10%;
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        .main {
+          margin-left: 40%;
+        }
+
+        .sidenav {
+          width: 40%;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+        }
+
+        .login-form {
+          margin-top: 80%;
+        }
+
+        .register-form {
+          margin-top: 20%;
+        }
+      }
+
+      .login-main-text {
+        margin-top: 20%;
+        padding: 60px;
         color: #fff;
-        padding: 0;
-        border: none;
-        background: #5372f0;
-        cursor: pointer;
-        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
       }
-      form input[type="submit"]:hover {
-        background: #2c52ed;
+
+      .login-main-text h2 {
+        font-weight: 300;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <h1>
-            Login Form
-        </h1>
-    </header>
-      <form action="#">
-
-        <div class="field email">
-          <input type="text" placeholder="Email Address">
-        </div>
-
-        <div class="password">
-            <input type="password" placeholder="Password">
-        </div>
-        <div class="login_as">
-          
-<div class="form-check">
-    student
-  </div>
-        </div>
-
-        <div class="pass"><a href="#">Forgot password?</a></div>
-
-        <input type="submit" value="Login" />
-      </form>
-
-      <div class="signin">Not yet member? <a href="#">Signup now</a></div>
+    <div class="sidenav">
+      <div class="login-main-text">
+        <h2>
+          Application<br />
+          Login Page
+        </h2>
+        <p>Login or register from here to access.</p>
+      </div>
     </div>
-
-    <script src="script.js"></script>
+    <div class="main">
+      <div class="col-md-6 col-sm-12">
+        <div class="login-form">
+          <form>
+            <div class="form-group">
+              <label>User Name</label>
+              <input type="text" class="form-control" placeholder="User Name" />
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+              />
+            </div>
+            <button type="submit" class="btn btn-black">Login</button>
+            <button type="submit" class="btn btn-secondary">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

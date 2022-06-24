@@ -6,8 +6,12 @@ from django.contrib.auth.decorators import login_required
 # Views
 
 
-@login_required
 def home(request):
+    return render(request, "registration/home.html", {})
+
+
+@login_required
+def index(request):
     return render(request, "registration/index.html", {})
 
 
@@ -20,7 +24,7 @@ def register(request):
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
             login(request, user)
-            return redirect('home')
+            return redirect('index')
     else:
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form': form})

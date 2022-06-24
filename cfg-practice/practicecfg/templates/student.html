@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Times New Roman", Times, serif;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background: linear-gradient(135deg, white, wheat);
+      }
+      .container {
+        max-width: 700px;
+        width: 100%;
+        background-color: #fff;
+        padding: 25px 30px;
+        border-radius: 5px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+      }
+      .title {
+        font-size: 25px;
+        font-weight: 900;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .input-box {
+        padding: 10px;
+        width: 300px;
+        height: 45px;
+        width: 100%;
+        outline: none;
+        font-size: 16px;
+        border-radius: 5px;
+        padding-left: 15px;
+      }
+
+      
+    .user-details  input {
+    height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 30px;
+  border-radius: 5px;
+  padding: 15px;
+  border: 1px solid #ccc;
+      }
+
+    form .input-box span.details {
+    font-weight: 400;
+    font-size: large;
+    margin-bottom: 5px;
+    padding:10px;
+}
+      form .button {
+        height: 45px;
+        margin: 35px 0;
+      }
+
+      .button input {
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        margin:10px;
+        border: none;
+        color: black;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: linear-gradient(135deg, white, wheat);
+      }
+
+      .button input:hover {
+        background: linear-gradient(-135deg, white, wheat);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="title">Student Form</div>
+
+      <div class="content">
+        <form action="#">
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" placeholder="Enter your email" required />
+          </div>
+
+          <div class="input-box">
+            <span class="details">Phone no. </span>
+            <input type="text" placeholder="Enter your phone number" required />
+          </div>
+
+          <div class="input-box">
+            <span class="details">Subject</span>
+            <input type="text" placeholder="Enter your Subject" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Homework</span>
+            <input type="file" placeholder="Enter your Homework" required />
+          </div>
+          
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" placeholder="Enter your password" id="cartoons" name="cartoons"
+            min="0" max="11"required />
+          </div>
+          <div class="input-box">
+            <span class="details">Choose category</span>
+            <br>
+            <input type="checkbox" id="primary" name="primary" value="Primary">
+            <label for="Primary">"Primary</label>
+            <br>
+            <input type="checkbox" id="Secondary" name="Secondary" value="Secondary">
+            <label for="Secondary">"Secondary</label>
+            <br>
+            <input type="checkbox" id="Undergrad" name="Undergrad" value="Undergrad">
+            <label for="Undergrad">"Undergrad</label>
+            <br>
+            <br>
+            <br>
+
+          </div>
+
+
+          <div class="button">
+            <input type="submit" value="Donate" />
+          </div>
+
+        </form>
+    
+    </div>
+  </body>
+</html>

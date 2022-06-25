@@ -1,0 +1,267 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="{% static 'signUp/style.css' %}" rel="stylesheet">  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    
+    <!-- Google font roboto+Mono -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <style>
+         body{
+            font-family: 'Roboto Mono', monospace;
+            /*background-color:black*/
+
+        }
+      .non-visible{
+          display:none;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+        *
+        {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Roboto Mono', monospace;
+        }
+        header
+        {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          padding: 40px 100px;
+          z-index: 1000;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        header .logo
+        {
+          color: #fff;
+          text-transform: uppercase;
+          cursor: pointer;
+        }
+        .toggle
+        {
+          position: relative;
+          width: 60px;
+          height: 60px;
+          background: url(https://i.ibb.co/HrfVRcx/menu.png);
+          background-repeat: no-repeat;
+          background-size: 30px;
+          background-position: center;
+          cursor: pointer;
+        }
+        .toggle.active
+        {
+          background: url(https://i.ibb.co/rt3HybH/close.png);
+          background-repeat: no-repeat;
+          background-size: 25px;
+          background-position: center;
+          cursor: pointer;
+        }
+        .showcase
+        {
+          position: absolute;
+          right: 0;
+          width: 100%;
+          min-height: 100vh;
+          padding: 100px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background: #111;
+          transition: 0.5s;
+          z-index: 2;
+        }
+        .showcase.active
+        {
+          right: 300px;
+        }
+        
+        .showcase video
+        {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0.8;
+        }
+        .overlay
+        {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #ccd5da;
+          mix-blend-mode: overlay;
+        }
+        .text
+        {
+          position: relative;
+          z-index: 10;
+        }
+        
+        .text h2
+        {
+          font-size: 5em;
+          font-weight: 800;
+          color: #fff;
+          line-height: 1em;
+          text-transform: uppercase;
+        }
+        .text h3
+        {
+          font-size: 4em;
+          font-weight: 700;
+          color: #fff;
+          line-height: 1em;
+          text-transform: uppercase;
+        }
+        .text p
+        {
+          font-size: 1.1em;
+          color: #fff;
+          margin: 20px 0;
+          font-weight: 400;
+          max-width: 700px;
+        }
+        .text a
+        {
+          display: inline-block;
+          font-size: 1em;
+          background: #fff;
+          padding: 10px 30px;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-weight: 500;
+          margin-top: 10px;
+          color: #111;
+          letter-spacing: 2px;
+          transition: 0.2s;
+        }
+        .text a:hover
+        {
+          letter-spacing: 6px;
+        }
+        .social
+        {
+          position: absolute;
+          z-index: 10;
+          bottom: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .social li
+        {
+          list-style: none;
+        }
+        .social li a
+        {
+          display: inline-block;
+          margin-right: 20px;
+          filter: invert(1);
+          transform: scale(0.5);
+          transition: 0.5s;
+        }
+        .social li a:hover
+        {
+          transform: scale(0.5) translateY(-15px);
+        }
+        .menu
+        {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 300px;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .menu ul
+        {
+          position: relative;
+        }
+        .menu ul li
+        {
+          list-style: none;
+        }
+        .menu ul li a
+        {
+          text-decoration: none;
+          font-size: 24px;
+          color: #111;
+        }
+        .menu ul li a:hover
+        {
+          color: #03a9f4; 
+        }
+        
+        @media (max-width: 991px)
+        {
+          .showcase,
+          .showcase header
+          {
+            padding: 40px;
+          }
+          .text h2
+          {
+            font-size: 3em;
+          }
+          .text h3
+          {
+            font-size: 2em;
+          }
+        }
+
+    </style>
+    <title>Home</title>
+  </head>
+  <body>
+
+    <section class="showcase">
+
+      <video src="{% static 'videos/vid2.mp4' %}" muted loop autoplay></video>
+      <div class="overlay"></div>
+      <div class="text">
+    
+    
+    
+        <h2>Welcome to the Django Classroom! <span class="icon-emo-happy"></span></h2>
+        <p class="lead">
+            If you already have an account, go ahead and <a href="{% url 'login' %}">log in</a>. If you are new to Django Schools, get started
+            by creating a <a href="{% url 'student_signup' %}">student account</a> or a <a href="{% url 'teacher_signup' %}">teacher account</a>.
+        </p>
+      </div>
+    </section>
+    
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();   
+      });
+      const menuToggle = document.querySelector('.toggle');
+      const showcase = document.querySelector('.showcase');
+      
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        showcase.classList.toggle('active');
+      });
+    </script>
+  </body>
+</html>
+
+

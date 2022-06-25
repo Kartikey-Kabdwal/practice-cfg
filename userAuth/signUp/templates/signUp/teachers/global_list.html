@@ -1,0 +1,40 @@
+{% extends 'signUp/base.html' %}
+{% block content %}
+      
+<div class="container">
+    <div class="row">
+        <div class="col col-10">
+            <h2 class="text-center"><u>global Rank list</u></h2><br>     
+        </div>
+        <div class="col col-2">
+            <button class="btn btn-outline-dark">Plot</button>
+        </div>
+    </div>       
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Student</th>
+          <th>Marks</th>
+          <th>Grades</th>
+          <th>Percentile</th>
+        </tr>
+      </thead>
+      <tbody>
+      <!-- jinja2 Technique -->
+      {% if d %}  
+      {% for i in d %}
+        <tr>
+          <td>{{i.index}}</td>
+          <td>{{i.stud}}</td>
+          <td>{{i.Marks}}</td>
+          <td>{{i.grades}}</td>
+          <td>{{i.percentile}}</td>
+        </tr>
+      {% endfor %}
+      {% endif %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
+

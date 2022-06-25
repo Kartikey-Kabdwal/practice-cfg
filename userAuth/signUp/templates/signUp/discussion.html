@@ -1,0 +1,24 @@
+{% extends 'signUp/base.html' %}
+{% block content %}
+  {% include 'signUp/students/_header.html' with active='discussion' %}
+
+  <div class="card">
+    {% if flag %}
+    <div class="alert alert-danger">
+        <a class="close" href="#" data-dismiss="alert"></a>
+        {{ message }}
+    </div>
+    {% endif %}
+  <form id="post-form" method="POST" action="/chat/checkview" class="mx-4 my-4">
+    {% csrf_token %}
+    <label class="">Room Name</label><br>
+    <input class="mt-2" type="text" name="room_name" id="room_name"/><br>
+    <!-- <label class="mt-2">Username</label><br>
+    <input type="text" name="username" id="username"/><br> -->
+    <button class="btn btn-outline-dark mt-3" type="submit">Enter Room</button><br>
+  </form>
+  </div>
+  <script>
+    document.getElementById('room_name').focus();
+  </script>
+{% endblock %}

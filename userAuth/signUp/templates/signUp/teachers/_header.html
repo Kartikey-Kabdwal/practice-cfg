@@ -1,0 +1,8 @@
+<ul class="nav nav-tabs mb-3">
+  <li class="nav-item">
+    <a class="nav-link{% if active == 'result' %} active{% endif %}" href="{% url 'teachers:quiz_results' quiz.pk %}">Results</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link{% if active == 'stats' %} active{% endif %}" href="{% url 'teachers:quiz_stats' quiz.pk %}">Stats</a>
+  </li>
+</ul>

@@ -1,0 +1,69 @@
+{% extends 'signUp/base.html' %}
+{% load static %}
+{% block content %}
+  {% include 'signUp/students/_header.html' with active='new' %}
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="quizStartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Start?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"id='modal-body-confirm'></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Exit</button>
+          <button type="button" id='start-button' class="btn btn-dark">Let's go</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Quiz</th>
+          <th>Panel</th>
+          <!-- <th>Length</th> -->
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for quiz in quizzes %}
+          <tr>
+            <!-- <td class="align-middle">{{ quiz.name }}</td> -->
+            
+            <!-- <td class="align-middle">{{ quiz.questions_count }} questions</td> -->
+            
+            <!-- <td class="text-right">
+              <a href="{% url 'students:take_quiz' quiz.pk %}" class="btn btn-primary">Start quiz</a>
+            </td> -->
+            
+            <td class="">
+                <button
+                    class="btn btn-link modal-button"
+                    data-pk="{{quiz.pk}}"
+                    data-quiz="{{quiz.name}}"
+                    data-questions="{{quiz.number_of_questions}}"
+                    data-time="{{quiz.time}}"
+                    data-pass = "{{quiz.required_score_to_pass}}"
+                    data-bs-toggle="modal"
+                    data-bs-target="#quizStartModal">
+                    {{quiz.name}}
+                </button>
+            </td>
+            <td>{{ quiz.subject.get_html_badge }}</td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td class="bg-light text-center font-italic" colspan="4">No quiz for your panel right now. For previous quizzes results go to taken section</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <script src="{% static 'js/main.js' %}" defer></script> 
+{% endblock %}

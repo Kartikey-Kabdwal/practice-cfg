@@ -1,0 +1,7 @@
+body{
+    font-family: 'Roboto Mono', monospace;
+    background-color:yellowgreen;
+
+    /* background: url('{{ STATIC_URL }}static/images/b.jpg'); */
+    /* background-image:  url('{{ STATIC_URL }}static/images/b.jpg'); */
+}
